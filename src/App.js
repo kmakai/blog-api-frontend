@@ -1,11 +1,16 @@
 import "./App.css";
+import { BlogProvider } from "./context/blog/BlogContext";
+import Posts from "./components/Posts";
 
 function App() {
   return (
-    <div className="App">
-      <h1>BLOG FRONTEND</h1>
-      <p>testing</p>
-    </div>
+    <BlogProvider>
+      <div className="App">
+        <h1>BLOG FRONTEND</h1>
+        <p>testing</p>
+        <Posts />
+      </div>
+    </BlogProvider>
   );
 }
 
