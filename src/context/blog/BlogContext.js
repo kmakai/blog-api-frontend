@@ -4,8 +4,9 @@ import BlogReducer from "./BlogReducer";
 const BlogContext = createContext();
 
 export const BlogProvider = ({ children }) => {
+  const signedIn = JSON.parse(localStorage.getItem("user"));
   const initialState = {
-    user: {},
+    user: signedIn ? signedIn : null,
     posts: [],
     post: {},
     comments: [],

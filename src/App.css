@@ -1,0 +1,76 @@
+.App,
+aside,
+main {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px lightgray solid;
+}
+
+.aside-main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  flex-grow: 1;
+}
+
+aside,
+aside ul {
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  border: 1px lightgray solid;
+}
+
+aside ul {
+  list-style: none;
+  gap: 10px;
+}
+
+/* MIAN STYLES */
+main {
+  border: 1px lightgray solid;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px lightgray solid;
+}
+
+footer .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGIN PAGE */
+.login-page,
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login-page form {
+  gap: 10px;
+}
+
+.form-group {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}

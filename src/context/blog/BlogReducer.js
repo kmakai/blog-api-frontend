@@ -5,6 +5,13 @@ const BlogReducer = (state, action) => {
         ...state,
         posts: action.payload,
       };
+
+    case "SIGN_IN_USER":
+      return {
+        ...state,
+        user: action.payload,
+      };
+
     default:
       return state;
   }
