@@ -12,6 +12,12 @@ const BlogReducer = (state, action) => {
         user: action.payload,
       };
 
+    case "LOG_OUT":
+      return {
+        ...state,
+        user: action.payload,
+      };
+
     default:
       return state;
   }

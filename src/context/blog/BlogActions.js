@@ -22,3 +22,7 @@ export const login = async (formData) => {
 
   return response.data;
 };
+
+export const logOut = () => {
+  localStorage.removeItem("user");
+};

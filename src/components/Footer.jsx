@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <div className="info">
-        <strong>BlogDev</strong>
+        <strong>BlogDEV</strong>
         <p>copy right: Kmakai</p>
       </div>
     </footer>

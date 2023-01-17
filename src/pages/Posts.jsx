@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { getPosts } from "../context/blog/BlogActions";
 import BlogContext from "../context/blog/BlogContext";
+import PostPreview from "../components/PostPreview";
 
 function Posts() {
   const { posts, dispatch } = useContext(BlogContext);
@@ -23,7 +24,7 @@ function Posts() {
       {posts.length > 0 && (
         <div>
           {posts.map((post) => (
-            <p>post.title</p>
+            <PostPreview post={post} key={post._id} />
           ))}
         </div>
       )}
