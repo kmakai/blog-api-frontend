@@ -6,6 +6,18 @@ const BlogReducer = (state, action) => {
         posts: action.payload,
       };
 
+    case "GET_POST":
+      return {
+        ...state,
+        post: action.payload,
+      };
+
+    case "GET_COMMENTS":
+      return {
+        ...state,
+        comments: action.payload,
+      };
+
     case "SIGN_IN_USER":
       return {
         ...state,

@@ -8,7 +8,7 @@ export const BlogProvider = ({ children }) => {
   const initialState = {
     user: signedIn ? signedIn : null,
     posts: [],
-    post: {},
+    post: null,
     comments: [],
   };
 

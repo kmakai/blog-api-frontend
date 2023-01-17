@@ -1,8 +1,28 @@
 import axios from "axios";
 
-// get post from api
+// get posts from api
 export const getPosts = async () => {
   const response = await axios.get(`http://localhost:5000/api/posts`);
+
+  console.log(response.data);
+  return response.data;
+};
+
+// get single post
+export const getPost = async (id) => {
+  console.log(id);
+  const response = await axios.get(`http://localhost:5000/api/posts/${id}`);
+
+  console.log(response.data);
+  return response.data;
+};
+
+// get post comments
+export const getPostComments = async (id) => {
+  console.log(id);
+  const response = await axios.get(
+    `http://localhost:5000/api/posts/${id}/comments`
+  );
 
   console.log(response.data);
   return response.data;
