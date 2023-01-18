@@ -17,7 +17,9 @@ function Comments({ comments }) {
   return (
     <div className="comments-container">
       {comments.length > 0 &&
-        comments.map((comment) => <Comment comment={comment} />)}
+        comments.map((comment) => (
+          <Comment comment={comment} key={comment._id} />
+        ))}
     </div>
   );
 }

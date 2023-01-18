@@ -4,9 +4,10 @@ import BlogContext from "../context/blog/BlogContext";
 import { useParams } from "react-router-dom";
 import { getPost, getPostComments } from "../context/blog/BlogActions";
 import Comments from "../components/Comments";
+import CommentForm from "../components/CommentForm";
 
 function PostPage() {
-  const { post, comments, dispatch } = useContext(BlogContext);
+  const { post, comments, dispatch, user } = useContext(BlogContext);
   const { postId } = useParams();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function PostPage() {
         </p>
         <p>{post.text}</p>
       </div>
+      {user && <CommentForm />}
       <h3>Comments:</h3>
       <Comments comments={comments} />
     </div>

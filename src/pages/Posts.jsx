@@ -26,8 +26,8 @@ function Posts() {
       <div className="posts-container">
         {posts.length > 0 &&
           posts.map((post) => (
-            <Link to={`/posts/${post._id}`}>
-              <PostPreview post={post} key={post._id} />
+            <Link to={`/posts/${post._id}`} key={post._id}>
+              <PostPreview post={post} />
             </Link>
           ))}
       </div>

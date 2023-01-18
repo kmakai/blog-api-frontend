@@ -28,8 +28,22 @@ export const getPostComments = async (id) => {
   return response.data;
 };
 
-// login
+export const postComment = async (id, text, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.post(
+    `http://localhost:5000/api/posts/${id}/comments`,
+    { text },
+    config
+  );
 
+  return response.data;
+};
+
+// login
 export const login = async (formData) => {
   const response = await axios.post(
     "http://localhost:5000/api/users/login",
