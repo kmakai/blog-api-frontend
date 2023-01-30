@@ -23,7 +23,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border: 1px lightgray solid;
+  border-bottom: 1px #000 solid;
+  padding-left: 3rem;
+}
+
+header h1 {
+  color: #fff;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 10px 15px;
+
+  font-size: 1.5rem;
 }
 
 .user-info {
@@ -31,6 +41,38 @@ header {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px #000 solid;
+  border-radius: 12px;
+  padding-right: 5px;
+}
+
+.user-info button {
+  border: none;
+  color: #fff;
+  background-color: #000;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px 15px;
+
+  font-size: 1rem;
+  font-weight: bold;
+}
+.user-info button a {
+  color: #fff;
+}
+
+.user-info button a:hover {
+  color: #000;
+}
+.user-info button:hover {
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  border-right: #000 2px solid;
 }
 
 .aside-main {
@@ -46,18 +88,32 @@ aside ul {
 }
 
 aside {
-  border: 1px lightgray solid;
+  border-right: 1px lightgray solid;
   padding: 2rem;
 }
 
 aside ul {
   list-style: none;
   gap: 10px;
+  margin-top: 10px;
+}
+
+aside ul li {
+  color: #000;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: all 2s;
+}
+
+aside ul li a:hover {
+  color: #1e293b;
+  border-bottom: 2px solid black;
 }
 
 /* MIAN STYLES */
 main {
-  border: 1px lightgray solid;
+  /* border: 1px lightgray solid; */
 }
 
 /* FOOTER */
@@ -101,15 +157,30 @@ footer .info {
 }
 
 .posts-page > h3 {
-  font-size: 28px;
+  font-size: 2.2rem;
+  border-bottom: 1px solid #475569;
 }
+
 .posts-container {
   height: 100%;
   display: grid;
   /* grid-template-columns: repeat(auto-fill, 100px); */
-  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(clamp(50px, 75px, 100px), 1fr));
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.posts-container a {
+  padding: 0.5rem;
+}
+
+.post-card h3 {
+  color: #1d4ed8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post-card p {
+  font-style: italic;
 }
 
 /* ABOUT PAGE*/
@@ -126,7 +197,11 @@ footer .info {
 
 .about-page h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
+}
+
+.about-page p {
+  font-size: 1.3rem;
 }
 
 /* SINGLE POST PAGE*/

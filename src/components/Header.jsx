@@ -25,9 +25,13 @@ function Header() {
             <p>{user.email}</p>
           </>
         ) : (
-          <button>
-            <Link to="/login"> login </Link>
-          </button>
+          <>
+            <Link to="/login">
+              <button>login</button>
+            </Link>
+
+            <p></p>
+          </>
         )}
       </div>
     </header>
