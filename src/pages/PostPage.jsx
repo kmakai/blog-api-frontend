@@ -12,7 +12,9 @@ function PostPage() {
 
   useEffect(() => {
     const loadPost = async () => {
-      const post = await getPost(postId, user.token);
+      const post = user
+        ? await getPost(postId, user.token)
+        : await getPost(postId);
       const comments = await getPostComments(postId);
       dispatch({
         type: "GET_POST",
@@ -26,7 +28,7 @@ function PostPage() {
     };
 
     loadPost();
-  }, [dispatch, postId, user.token]);
+  }, [dispatch, postId, user]);
 
   if (post === null) return <p>Loading...</p>;
 

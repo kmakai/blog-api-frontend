@@ -9,17 +9,18 @@ export const getPosts = async () => {
 };
 
 // get single post
-export const getPost = async (id, token) => {
+export const getPost = async (id, token = null) => {
   console.log(id);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.get(
-    `http://localhost:5000/api/posts/${id}`,
-    config
-  );
+
+  const response =
+    token === null
+      ? await axios.get(`http://localhost:5000/api/posts/${id}`)
+      : await axios.get(`http://localhost:5000/api/posts/${id}`, config);
 
   console.log(response.data);
   return response.data;
