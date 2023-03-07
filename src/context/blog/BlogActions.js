@@ -1,8 +1,9 @@
 import axios from "axios";
+const apiUrl = "https://express-blog-api-production-ca87.up.railway.app";
 
 // get posts from api
 export const getPosts = async () => {
-  const response = await axios.get(`http://localhost:5000/api/posts`);
+  const response = await axios.get(`${apiUrl}/api/posts`);
 
   console.log(response.data);
   return response.data;
@@ -19,8 +20,8 @@ export const getPost = async (id, token = null) => {
 
   const response =
     token === null
-      ? await axios.get(`http://localhost:5000/api/posts/${id}`)
-      : await axios.get(`http://localhost:5000/api/posts/${id}`, config);
+      ? await axios.get(`${apiUrl}/api/posts/${id}`)
+      : await axios.get(`${apiUrl}/api/posts/${id}`, config);
 
   console.log(response.data);
   return response.data;
@@ -29,9 +30,7 @@ export const getPost = async (id, token = null) => {
 // get post comments
 export const getPostComments = async (id) => {
   console.log(id);
-  const response = await axios.get(
-    `http://localhost:5000/api/posts/${id}/comments`
-  );
+  const response = await axios.get(`${apiUrl}/api/posts/${id}/comments`);
 
   console.log(response.data);
   return response.data;
@@ -44,7 +43,7 @@ export const postComment = async (id, text, token) => {
     },
   };
   const response = await axios.post(
-    `http://localhost:5000/api/posts/${id}/comments`,
+    `${apiUrl}/api/posts/${id}/comments`,
     { text },
     config
   );
@@ -54,10 +53,7 @@ export const postComment = async (id, text, token) => {
 
 // login
 export const login = async (formData) => {
-  const response = await axios.post(
-    "http://localhost:5000/api/users/login",
-    formData
-  );
+  const response = await axios.post(`${apiUrl}/api/users/login`, formData);
 
   if (response.data) {
     localStorage.setItem("user", JSON.stringify(response.data));
