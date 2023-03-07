@@ -166,17 +166,24 @@ footer .info {
   display: grid;
   /* grid-template-columns: repeat(auto-fill, 100px); */
   grid-template-rows: repeat(auto-fill, minmax(clamp(50px, 75px, 100px), 1fr));
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 1rem;
 }
 
 .posts-container a {
   padding: 0.5rem;
+  border: 1px lightgray solid;
+  border-radius: 5px;
 }
 
 .post-card h3 {
   color: #1d4ed8;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.post-text {
+  overflow: hidden;
+  height: 1rem;
+  margin-bottom: 5px;
 }
 
 .post-card p {
